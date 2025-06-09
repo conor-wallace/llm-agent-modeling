@@ -1,0 +1,40 @@
+The environment is a 5x4 grid kitchen with specific object locations. Your goal is to gather onions, place them in the pot to cook, then serve the soup.
+
+Key locations:
+
+* **Counter space:** Various edge cells
+* **Pot:** (2, 0)
+* **Onion dispensers:** (0, 1), (4, 1)
+* **Dish dispenser:** (1, 3)
+* **Serving location:** (3, 3)
+
+Task flow:
+
+1. Get onion → 3 times into pot
+2. Cook soup
+3. Put soup in a dish
+4. Serve at (3, 3)
+
+Skills:
+
+1. pickup onion
+  - pickup onion from the onion dispenser to be placed in the pot
+2. pickup dish
+  - pickup dish from the dish dispenser to pickup soup
+3. pickup soup
+  - pickup soup from the counter to server at the serving location
+4. place object on counter
+  - place a held object on the counter
+5. deliver soup
+  - deliver the soup to the serving location
+6. put onion in pot
+  - put an onion in the pot
+  - there can only be three onions in the pot at a time
+7. pickup soup with dish
+  - pickup the soup from the pot and put it in the dish
+8. go to closest feature
+  - go to the closest feature such as a pot or onion dispenser
+9. wait
+  - do nothing
+
+Chefs can't move into non-empty or impassible cells and can place items on counters if facing them.

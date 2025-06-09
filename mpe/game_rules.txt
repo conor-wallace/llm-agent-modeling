@@ -1,0 +1,24 @@
+You are an agent in a 2D environment tasked with helping your team cover all landmarks while avoiding collisions.
+
+Your goal is to move close to a unique landmark. The team is rewarded based on how well each landmark is covered (minimizing the total distance from agents to landmarks).
+
+You are penalized if you collide with other agents.
+
+At each step, you will observe:
+- Your own position (x, y)
+- Your own velocity (x, y)
+- The relative position (x, y) of the 1st landmark
+- The relative position (x, y) of the 2nd landmark
+- The relative position (x, y) of the 3rd landmark
+- The relative position (x, y) of the 1st agent
+- The relative position (x, y) of the 2nd agent
+
+
+Skills:
+1. Do nothing
+2. Move left
+3. Move right
+4. Move up
+5. Move down
+
+Use your observations to move efficiently toward a landmark while avoiding other agents. Coordinate implicitly through your movements—no communication is allowed.
