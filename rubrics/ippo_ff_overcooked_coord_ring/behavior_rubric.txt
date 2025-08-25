@@ -1,0 +1,19 @@
+DEFAULT
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+3.00 ± 0.00            1.00 ± 0.00            2.50 ± 0.53            1.30 ± 0.48            1.60 ± 0.97            1.60 ± 0.97            2.80 ± 0.92            1.90 ± 0.88            1.90 ± 1.45          
+
+POT
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+0.90 ± 1.45            1.20 ± 0.63            2.60 ± 0.70            0.10 ± 0.32            9.80 ± 7.73            1.80 ± 1.03            2.90 ± 1.10            0.10 ± 0.32            10.10 ± 7.48         
+
+PLATE
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+0.90 ± 1.45            1.80 ± 1.69            2.50 ± 0.53            0.00 ± 0.00            11.50 ± 5.46           2.40 ± 1.65            2.80 ± 0.92            0.00 ± 0.00            11.80 ± 5.05         
+
+SERVE
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+0.30 ± 0.95            2.00 ± 3.16            3.80 ± 4.32            0.10 ± 0.32            9.40 ± 7.89            2.60 ± 4.06            4.10 ± 4.61            0.10 ± 0.32            9.50 ± 7.84          
+
+MIXED
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+0.90 ± 1.45            1.20 ± 0.63            2.50 ± 0.53            0.00 ± 0.00            12.90 ± 5.76           1.80 ± 1.03            2.80 ± 0.92            0.00 ± 0.00            13.20 ± 5.29         
