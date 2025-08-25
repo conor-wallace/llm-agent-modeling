@@ -1,4 +1,5 @@
 import json
+import os
 
 from langchain.chat_models import init_chat_model
 from langchain.schema.messages import SystemMessage
@@ -89,15 +90,27 @@ class ReCoLLABAgent(BaseAgent):
     ):
         super().__init__(config, env, checkpoint_dir, team_dirs["DEFAULT"], agent_idx)
 
+        if config["USE_ALL_TEAMMATES"]:
+            rubric_path = os.path.join(config['RUBRIC_PATH'], f'ippo_ff_overcooked_{config["LAYOUT_NAME"]}', 'behavior_rubric.txt')
+        else:
+            rubric_path = os.path.join(config['RUBRIC_PATH'], f'ippo_ff_overcooked_{config["LAYOUT_NAME"]}', 'behavior_rubric_subset.txt')
+
+        with open(rubric_path, 'r') as f:
+            self.behavior_rubric = f.read()
+
         self.t = 0
         self.team_dirs = team_dirs
         self.pred_teammate_type = "DEFAULT"
         self.hist = TeammateHistory(K=self.config["K"])
         self.model = init_chat_model(self.config["MODEL_ID"])
+
+        database_dir = os.path.join(config['DATABASE_PATH'], f'ippo_ff_overcooked_{config["LAYOUT_NAME"]}')
+        database_name = f'ippo_ff_overcooked_{config["LAYOUT_NAME"]}'
+
         self.db = Chroma(
-            collection_name=self.config["DATABASE_NAME"],
+            collection_name=database_name,
             embedding_function=OpenAIEmbeddings(model=self.config["EMBEDDING_MODEL"]),
-            persist_directory=self.config["DATABASE_DIR"],
+            persist_directory=database_dir,
         )
 
     def act(self, obs, prev_actions, prev_rewards):
@@ -147,6 +160,7 @@ class ReCoLLABAgent(BaseAgent):
                 )
 
             rag_task_prompt = RAG_TASK_PROMPT.format(
+                behavior_rubric=self.behavior_rubric,
                 retrieved_examples=retrieval_results,
                 cumulative_reward=f"{agent_features_dict_0["cumulative_reward"]:.2f}",
                 dwell_onion=f"{agent_features_dict_0["dwell_onion"]:.2f}",

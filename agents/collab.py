@@ -1,4 +1,5 @@
 import json
+import os
 
 from langchain.chat_models import init_chat_model
 from langchain.schema.messages import SystemMessage
@@ -15,6 +16,14 @@ class CoLLABAgent(BaseAgent):
         self, config, env, checkpoint_dir, team_dirs, agent_idx
     ):
         super().__init__(config, env, checkpoint_dir, team_dirs["DEFAULT"], agent_idx)
+
+        if config["USE_ALL_TEAMMATES"]:
+            rubric_path = os.path.join(config['RUBRIC_PATH'], f'ippo_ff_overcooked_{config["LAYOUT_NAME"]}', 'behavior_rubric.txt')
+        else:
+            rubric_path = os.path.join(config['RUBRIC_PATH'], f'ippo_ff_overcooked_{config["LAYOUT_NAME"]}', 'behavior_rubric_subset.txt')
+
+        with open(rubric_path, 'r') as f:
+            self.behavior_rubric = f.read()
 
         self.t = 0
         self.team_dirs = team_dirs
@@ -47,6 +56,7 @@ class CoLLABAgent(BaseAgent):
             )
 
             task_prompt = TASK_PROMPT.format(
+                behavior_rubric=self.behavior_rubric,
                 cumulative_reward=f"{agent_features_dict_0["cumulative_reward"]:.2f}",
                 dwell_onion=f"{agent_features_dict_0["dwell_onion"]:.2f}",
                 dwell_plate=f"{agent_features_dict_0["dwell_plate"]:.2f}",

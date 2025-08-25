@@ -1,0 +1,19 @@
+DEFAULT
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+3.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00          
+
+POT
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+5.70 ± 0.95            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00          
+
+PLATE
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+3.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00          
+
+SERVE
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+0.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00          
+
+MIXED
+cumulative_reward      dwell_onion            dwell_plate            dwell_pot              dwell_window           near_onion_pile_steps  near_plate_pile_steps  near_pot_steps         near_window_steps    
+6.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00            19.00 ± 0.00           1.00 ± 0.00            20.00 ± 0.00           0.00 ± 0.00          
